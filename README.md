@@ -3,7 +3,6 @@ This program encrypts and decrypts text by shifting each letter by a fixed numbe
 #include <stdio.h>
 #include <ctype.h>
 
-// Encrypts the text by shifting letters by 'shift' positions
 void encrypt(char *text, int shift) {
     for (int i = 0; text[i] != '\0'; i++) {
         char c = text[i];
@@ -13,16 +12,12 @@ void encrypt(char *text, int shift) {
         }
     }
 }
-
-// Decrypts the text by reversing the shift
 void decrypt(char *text, int shift) {
     encrypt(text, 26 - shift);
 }
-
 int main() {
     char text[1000];
     int shift;
-
     printf("Enter text: ");
     fgets(text, sizeof(text), stdin);
 
@@ -34,6 +29,5 @@ int main() {
 
     decrypt(text, shift);
     printf("Decrypted text: %s", text);
-
     return 0;
 }
